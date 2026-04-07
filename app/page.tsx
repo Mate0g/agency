@@ -330,7 +330,7 @@ export default function Home() {
           <Globe size={24} />
           <span className="font-black tracking-tighter text-[#0A192F]">EPM AGENCY</span>
         </div>
-        <p className="text-slate-300 text-[10px] font-bold uppercase tracking-[0.5em] mb-4">© 2026 Estudios por el Mundo</p>
+        <p className="text-slate-300 text-[10px] font-bold uppercase tracking-[0.5em] mb-4">© 2025 Estudios por el Mundo</p>
       </footer>
 
       {/* WHATSAPP FLOTANTE */}
