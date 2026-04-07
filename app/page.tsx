@@ -5,7 +5,7 @@ import {
   Search, CheckCircle2, Clock, AlertCircle, Globe, 
   GraduationCap, Stethoscope, BookOpen, MessageCircle, 
   ArrowRight, Menu, Star, Quote, ChevronDown, ShieldCheck, Loader2,
-  Upload, FileText, Check
+  Upload, FileText, Check, Mail
 } from 'lucide-react';
 
 export default function Home() {
@@ -133,7 +133,7 @@ export default function Home() {
         </div>
         
         <h1 className="text-5xl md:text-8xl lg:text-9xl font-black text-[#0A192F] mb-10 leading-[0.95] tracking-tight">
-          Tu futuro médico en <br className="hidden md:block" />
+          Tu futuro profesional en <br className="hidden md:block" />
           <span className="text-[#C5A059] relative inline-block">
             Argentina.
             <svg className="absolute w-full h-4 -bottom-2 left-0 text-[#C5A059]/20" viewBox="0 0 100 10" preserveAspectRatio="none">
@@ -152,7 +152,7 @@ export default function Home() {
             Ver Servicios <ArrowRight size={18} />
           </a>
           <a 
-            href="https://wa.me/5491128519225?text=Hola%20EPM%20Agency,%20me%20interesa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+            href="https://wa.me/593994287462?text=Hola%20EPM%20Agency,%20me%20interesa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-[#0A192F] border-2 border-slate-100 px-10 py-5 md:px-12 md:py-6 rounded-full font-bold hover:border-[#0A192F] hover:bg-slate-50 transition-all uppercase text-xs md:text-sm tracking-widest flex items-center justify-center gap-2"
@@ -170,36 +170,41 @@ export default function Home() {
       <section id="servicios" className="py-24 md:py-32 bg-slate-50/80 rounded-[3rem] md:rounded-[5rem] mx-4 md:mx-10 mb-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-6xl font-black text-[#0A192F] mb-6">Soluciones Académicas</h2>
+            <h2 className="text-3xl md:text-6xl font-black text-[#0A192F] mb-6">Nuestros Servicios</h2>
             <div className="w-24 h-2 bg-[#C5A059] mx-auto rounded-full"></div>
-            <p className="mt-6 text-slate-500 text-lg max-w-2xl mx-auto">
-              Acompañamiento integral para estudiantes y profesionales de la salud.
+            <p className="mt-6 text-slate-500 text-lg max-w-3xl mx-auto">
+              Te acompañamos en todo el proceso migratorio y académico, asegurando tu ingreso tanto a universidades públicas como privadas de prestigio.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {/* SERVICIO 1 */}
             <ServiceCard 
               icon={<GraduationCap size={40} />}
               title="Grado Universitario (UBA y Privadas)"
-              description="Asegura tu ingreso a la Universidad de Buenos Aires (UBA - CBC/UBA XXI) o a las mejores Universidades Privadas (Barceló, UAI, Austral, etc.). Incluye legalización de título bachiller, trámite de DNI temporario y permanente, y asesoría en vivienda."
-              whatsappMessage="Hola EPM, me interesa estudiar una carrera de Grado en la UBA o Universidad Privada."
+              description="Asegura tu ingreso a la Universidad de Buenos Aires (UBA - CBC/UBA XXI) o a las mejores Universidades Privadas (Barceló, UAI, Austral, etc.). Incluye legalización de título bachiller, trámite de DNI temporario, búsqueda de vivienda segura y asesoría pre-partida."
+              whatsappMessage="Hola EPM, me interesa estudiar una carrera de Grado (Medicina/Otros) en la UBA o Privada."
             />
+            
+            {/* SERVICIO 2 - DESTACADO */}
             <div className="relative transform md:-translate-y-4">
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#C5A059] text-white text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full z-10 shadow-lg">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#C5A059] text-white text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full z-10 shadow-lg whitespace-nowrap">
                 Más Solicitado
               </div>
               <ServiceCard 
                 icon={<Stethoscope size={40} />}
                 title="Especialidades en el Área de la Salud"
-                description="Convalidación de Título Profesional (Medicina, Odontología, Enfermería) ante los Ministerios de Educación y Salud. Asesoría y cupos para el Examen Único de Residencias Médicas y especializaciones de alto nivel."
+                description="Convalidación de Título Profesional (Medicina, Odontología, Enfermería, etc.) ante los Ministerios de Educación y Salud. Asesoría integral para Residencias, Concurrencias y Especializaciones universitarias."
                 highlighted={true}
                 whatsappMessage="Hola EPM, soy profesional de la salud y quiero información sobre Convalidación y Especialidades."
               />
             </div>
+
+            {/* SERVICIO 3 */}
             <ServiceCard 
               icon={<BookOpen size={40} />}
               title="Maestrías y Posgrados"
-              description="Potencia tu carrera con programas de cuarto nivel: Doctorados, Maestrías y Diplomaturas en instituciones públicas y privadas. Te guiamos en la inscripción universitaria, apostillado de documentos y matriculación."
+              description="Potencia tu carrera con programas de cuarto nivel: Doctorados, Maestrías y Diplomaturas en las instituciones más prestigiosas de Argentina. Te guiamos en la inscripción universitaria, apostillado de documentos y renovación de residencia precaria."
               whatsappMessage="Hola EPM, busco información sobre Maestrías y Posgrados en Argentina."
             />
           </div>
@@ -325,17 +330,64 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-white py-16 text-center border-t border-gray-100">
-        <div className="flex justify-center items-center gap-2 mb-6 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          <Globe size={24} />
-          <span className="font-black tracking-tighter text-[#0A192F]">EPM AGENCY</span>
+      {/* --- SECCIÓN 5: CONTACTO Y FOOTER --- */}
+      <footer className="bg-white pt-20 pb-10 border-t border-gray-100 mt-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-center md:text-left">
+            
+            {/* 1. Marca y Descripción */}
+            <div className="flex flex-col items-center md:items-start">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-[#0A192F] rounded-2xl flex items-center justify-center text-white shadow-lg"><Globe size={24} /></div>
+                <div className="flex flex-col text-left">
+                  <span className="text-2xl font-black text-[#0A192F] leading-none uppercase tracking-tighter italic">EPM</span>
+                  <span className="text-[10px] font-bold text-[#C5A059] uppercase tracking-[0.3em]">Agency</span>
+                </div>
+              </div>
+              <p className="text-slate-500 text-sm font-medium max-w-xs leading-relaxed">
+                Especialistas en gestión académica, legal y migratoria para estudiantes y profesionales de la salud en Argentina.
+              </p>
+            </div>
+
+            {/* 2. Líneas de Atención (Banderas) */}
+            <div className="flex flex-col items-center md:items-start">
+              <h4 className="text-[#0A192F] font-black uppercase tracking-widest text-xs mb-6">Líneas de Atención</h4>
+              <div className="space-y-4">
+                <a href="https://wa.me/5491128519225" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-600 hover:text-[#C5A059] transition-colors font-bold text-sm bg-slate-50 px-4 py-2 rounded-xl w-fit">
+                  <span className="text-2xl">🇦🇷</span> +54 9 11 2851-9225 (Sede Argentina)
+                </a>
+                <a href="https://wa.me/593994287462" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-600 hover:text-[#C5A059] transition-colors font-bold text-sm bg-slate-50 px-4 py-2 rounded-xl w-fit">
+                  <span className="text-2xl">🇪🇨</span> +593 0994287462 (Sede Ecuador)
+                </a>
+              </div>
+            </div>
+
+            {/* 3. Correos Corporativos */}
+            <div className="flex flex-col items-center md:items-start">
+              <h4 className="text-[#0A192F] font-black uppercase tracking-widest text-xs mb-6">Correos Corporativos</h4>
+              <div className="space-y-3">
+                <a href="mailto:info@estudiosporelmundo.com" className="flex items-center gap-3 text-slate-600 hover:text-[#C5A059] transition-colors font-bold text-sm group">
+                  <div className="bg-blue-50 p-2.5 rounded-xl text-blue-600 group-hover:bg-blue-100 transition-colors"><Mail size={16}/></div>
+                  info@estudiosporelmundo.com
+                </a>
+                <a href="mailto:contacto@estudiosporelmundo.com" className="flex items-center gap-3 text-slate-600 hover:text-[#C5A059] transition-colors font-bold text-sm group">
+                  <div className="bg-orange-50 p-2.5 rounded-xl text-orange-600 group-hover:bg-orange-100 transition-colors"><FileText size={16}/></div>
+                  contacto@estudiosporelmundo.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-center items-center gap-4">
+            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">© 2025 Estudios por el Mundo. Todos los derechos reservados.</p>
+          </div>
         </div>
-        <p className="text-slate-300 text-[10px] font-bold uppercase tracking-[0.5em] mb-4">© 2025 Estudios por el Mundo</p>
       </footer>
 
-      {/* WHATSAPP FLOTANTE */}
+      {/* --- WHATSAPP FLOTANTE --- */}
       <a 
-        href="https://wa.me/5491128519225?text=Hola%20EPM%20Agency,%20necesito%20asesor%C3%ADa." 
+        href="https://wa.me/593994287462?text=Hola%20EPM%20Agency,%20necesito%20asesor%C3%ADa." 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 md:bottom-10 md:right-10 bg-[#25D366] text-white p-4 md:p-5 rounded-full shadow-[0_10px_40px_-10px_rgba(37,211,102,0.6)] hover:scale-110 hover:-translate-y-2 transition-all z-50 flex items-center justify-center group"
@@ -347,9 +399,12 @@ export default function Home() {
   );
 }
 
-// COMPONENTES AUXILIARES
+// --- COMPONENTES AUXILIARES ---
+
 function ServiceCard({ icon, title, description, highlighted = false, whatsappMessage }: any) {
-  const link = `https://wa.me/5491128519225?text=${encodeURIComponent(whatsappMessage)}`;
+  const finalMessage = whatsappMessage || "Hola EPM, quiero más información sobre sus servicios.";
+  const link = `https://wa.me/593994287462?text=${encodeURIComponent(finalMessage)}`;
+
   return (
     <div className={`h-full p-8 md:p-10 rounded-[2.5rem] border transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center group ${highlighted ? 'bg-[#0A192F] text-white border-[#0A192F] shadow-2xl shadow-blue-900/20' : 'bg-white border-gray-100 text-[#0A192F] hover:shadow-xl hover:border-[#C5A059]/30'}`}>
       <div className={`mb-8 p-5 rounded-3xl transition-colors ${highlighted ? 'bg-white/10 text-[#C5A059]' : 'bg-[#0A192F]/5 text-[#0A192F] group-hover:bg-[#C5A059] group-hover:text-white'}`}>
@@ -360,13 +415,14 @@ function ServiceCard({ icon, title, description, highlighted = false, whatsappMe
         {description}
       </p>
       
+      {/* BOTÓN DE MÁS INFORMACIÓN */}
       <a 
         href={link} 
         target="_blank" 
         rel="noopener noreferrer"
-        className={`px-8 py-3 rounded-xl font-bold uppercase text-[10px] tracking-widest transition-all shadow-lg hover:scale-105 flex items-center gap-2 mt-auto ${highlighted ? 'bg-[#C5A059] text-white hover:bg-white hover:text-[#0A192F]' : 'bg-slate-50 text-[#0A192F] hover:bg-[#0A192F] hover:text-white'}`}
+        className={`px-8 py-3 rounded-xl font-bold uppercase text-[10px] tracking-widest transition-all shadow-lg hover:scale-105 flex items-center gap-2 mt-auto ${highlighted ? 'bg-[#C5A059] text-white hover:bg-white hover:text-[#0A192F]' : 'bg-[#0A192F] text-white hover:bg-[#C5A059]'}`}
       >
-        Más información <ArrowRight size={14}/>
+        Quiero más información <ArrowRight size={14}/>
       </a>
     </div>
   );
@@ -394,8 +450,8 @@ function TestimonialCard({ name, role, text }: { name: string, role: string, tex
 }
 
 function StatusCard({ label, value }: { label: string, value: string }) {
-  // Corrección: Solo es verde si el valor es exactamente "Finalizado" o "Completa"
   const isDone = value && (value.toLowerCase() === "finalizado" || value.toLowerCase() === "completa");
+  
   return (
     <div className={`p-6 rounded-[2rem] border-2 transition-all text-left ${isDone ? 'bg-emerald-50/50 border-emerald-100' : 'bg-orange-50/50 border-orange-100'}`}>
       <div className={`mb-4 w-8 h-8 rounded-full flex items-center justify-center ${isDone ? 'bg-emerald-500 text-white' : 'bg-orange-500 text-white'}`}>
