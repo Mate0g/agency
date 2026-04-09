@@ -379,7 +379,7 @@ export default function ChileLanding() {
 
           {/* Copyright */}
           <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-center items-center gap-4">
-            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">© 2026 Estudios por el Mundo. Todos los derechos reservados.</p>
+            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">© 2025 Estudios por el Mundo. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
