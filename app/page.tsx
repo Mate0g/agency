@@ -6,7 +6,7 @@ export default function GlobalHub() {
   // Estado para controlar qué país está activando el fondo global
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
-  // Fotografías Icónicas de Alta Disponibilidad (Monumentos Reales)
+  // Fotografías Icónicas de Alta Disponibilidad (TUS IMÁGENES)
   const backgrounds: Record<string, string> = {
     brasil: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=1920&auto=format&fit=crop", // Cristo Redentor
     chile: "https://www.infobae.com/resizer/v2/RTFZEKNQZNBZRBVUWMKKD3VZNQ?auth=e83c343898d4d9315b0f0a380fb0a98cf19b2b85a4f824dce91e784837ea1c43&smart=true&width=1200&height=675&quality=85", // Santiago / Andes
@@ -16,11 +16,11 @@ export default function GlobalHub() {
   };
 
   return (
-    /* h-screen y overflow-hidden para eliminar el scroll en computadoras */
-    <div className="h-screen w-full bg-[#000000] flex flex-col items-center justify-center relative overflow-hidden selection:bg-[#C5A059]/30 font-sans">
+    /* min-h-screen y overflow-y-auto permite que NO se aplaste y deje hacer scroll si la pantalla es chica */
+    <div className="min-h-screen w-full bg-[#000000] flex flex-col items-center justify-center relative overflow-x-hidden overflow-y-auto selection:bg-[#C5A059]/30 font-sans">
       
-      {/* CAPA DE FONDO GLOBAL (Se activa al pasar el mouse sobre una tarjeta) */}
-      <div className="absolute inset-0 z-0">
+      {/* CAPA DE FONDO GLOBAL (Fija para que no se mueva al hacer scroll) */}
+      <div className="absolute inset-0 z-0 fixed">
         {Object.entries(backgrounds).map(([id, url]) => (
           <div 
             key={id}
@@ -36,15 +36,15 @@ export default function GlobalHub() {
       </div>
 
       {/* LUZ AMBIENTAL DORADA CENTRAL */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#C5A059]/5 rounded-full blur-[200px] pointer-events-none z-1 mix-blend-screen"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#C5A059]/5 rounded-full blur-[200px] pointer-events-none z-1 mix-blend-screen fixed"></div>
 
       {/* CONTENEDOR DE LA INTERFAZ */}
-      <div className="relative z-10 w-full max-w-7xl px-6 flex flex-col items-center justify-between h-full py-12 lg:py-16">
+      <div className="relative z-10 w-full max-w-7xl px-4 md:px-8 flex flex-col items-center justify-center min-h-screen py-12 lg:py-16">
         
-        {/* HEADER CINEMATOGRÁFICO */}
-        <div className="text-center flex flex-col items-center animate-[titleReveal_1.5s_ease-out_forwards]">
+        {/* HEADER CINEMATOGRÁFICO (Espacios arreglados para que no se peguen las letras) */}
+        <div className="text-center flex flex-col items-center animate-[titleReveal_1.5s_ease-out_forwards] mb-12">
           <h1 
-            className="text-6xl md:text-8xl lg:text-[8.5rem] font-black tracking-tighter italic bg-clip-text text-transparent bg-gradient-to-b from-[#FFF5D1] via-[#C5A059] to-[#8B6914] leading-none mb-4" 
+            className="text-5xl md:text-7xl lg:text-[7.5rem] font-black tracking-normal italic bg-clip-text text-transparent bg-gradient-to-b from-[#FFF5D1] via-[#C5A059] to-[#8B6914] leading-tight mb-6" 
             style={{ 
               fontFamily: 'Georgia, serif',
               filter: 'drop-shadow(0 0 20px rgba(197, 160, 89, 0.4))'
@@ -53,15 +53,15 @@ export default function GlobalHub() {
             EPM Agency
           </h1>
           
-          <div className="h-[1px] w-32 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mb-6"></div>
+          <div className="h-[1px] w-32 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mb-8"></div>
 
-          <p className="text-slate-300 text-xs md:text-sm lg:text-base font-light tracking-[0.3em] uppercase drop-shadow-lg">
+          <p className="text-slate-300 text-xs md:text-sm lg:text-base font-light tracking-[0.2em] md:tracking-[0.3em] uppercase drop-shadow-lg">
             Descubre el destino de tu <span className="text-[#C5A059] font-bold">futuro profesional</span>
           </p>
         </div>
 
         {/* GRID DE DESTINOS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-6xl items-center relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full max-w-6xl items-center relative z-20 mb-10">
           
           {/* Lado Izquierdo */}
           <div className="flex flex-col gap-6 lg:gap-8">
@@ -84,7 +84,7 @@ export default function GlobalHub() {
           </div>
 
           {/* Argentina (Protagonista) */}
-          <div className="flex flex-col transform md:-translate-y-4">
+          <div className="flex flex-col transform lg:-translate-y-4">
             <CountryCard 
               country="Argentina" 
               imgUrl="https://flagcdn.com/w160/ar.png" 
@@ -119,9 +119,9 @@ export default function GlobalHub() {
         </div>
 
         {/* FOOTER */}
-        <div className="text-center">
+        <div className="text-center mt-auto pb-4">
           <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.4em] opacity-60">
-            EPM Agency 2025 Copyright
+            EPM Agency 2026 Copyright
           </p>
         </div>
       </div>
@@ -173,7 +173,7 @@ function CountryCard({
           transition-all duration-500 ease-out cursor-pointer
           hover:-translate-y-2 hover:border-[#C5A059]/40 hover:bg-white/[0.08]
           hover:shadow-[0_25px_50px_-15px_rgba(197,160,89,0.25)]
-          ${featured ? 'h-[240px] md:h-[320px] lg:h-[420px] shadow-2xl' : 'h-[180px] md:h-[220px] lg:h-[280px] shadow-lg'}
+          ${featured ? 'h-[220px] md:h-[280px] lg:h-[380px] shadow-2xl' : 'h-[180px] md:h-[220px] lg:h-[260px] shadow-lg'}
         `}>
           
           {/* Brillo radial interno en hover */}
